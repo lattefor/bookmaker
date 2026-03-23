@@ -4,13 +4,14 @@ import BookCard from "@/components/BookCard";
 import {getAllBooks} from "@/lib/actions/book.actions";
 import Search from "@/components/Search";
 
-import { sampleBooks} from '@/lib/constants';
+// import { sampleBooks} from '@/lib/constants';
 
 const Page = async ({ searchParams }: { searchParams: Promise<{ query?: string }> }) => {
     const { query } = await searchParams;
 
-   // const bookResults = await getAllBooks(query)
-    const books = sampleBooks; //bookResults.success ? bookResults.data ?? [] : []
+    const bookResults = await getAllBooks(query)
+    //const books = sampleBooks; //bookResults.success ? bookResults.data ?? [] : []
+    const books = bookResults.success ? bookResults.data ?? [] : [];
 
     return (
         <main className="wrapper container">

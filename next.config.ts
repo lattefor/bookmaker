@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    turbopack: {},
+    serverExternalPackages: ['pdfjs-dist'],
     experimental: {
         serverActions: {
             bodySizeLimit: '100mb',
@@ -11,7 +13,7 @@ const nextConfig: NextConfig = {
     },
     images: { remotePatterns: [
             { protocol: 'https', hostname: 'covers.openlibrary.org' },
-            { protocol: 'https', hostname: 'lspfdyhgsrgsxcju.public.blob.vercel-storage.com' },
+            { protocol: 'https', hostname: 'jztft2edqs8va60e.public.blob.vercel-storage.com' },
         ]}
 };
 
